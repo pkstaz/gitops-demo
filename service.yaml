@@ -1,0 +1,22 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world-nodejs
+  namespace: demo-minsal-2
+  labels:
+    app: hello-world-nodejs
+    app.kubernetes.io/component: hello-world-nodejs
+    app.kubernetes.io/instance: hello-world-nodejs
+    app.kubernetes.io/name: hello-world-nodejs
+    app.kubernetes.io/part-of: hello-world-nodejs-app
+    app.openshift.io/runtime-version: develop
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+  selector:
+    app: hello-world-nodejs
+    deployment: hello-world-nodejs
