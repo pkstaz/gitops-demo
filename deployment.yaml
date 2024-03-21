@@ -1,8 +1,6 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: '1'
   name: hello-world-nodejs
   namespace: demo-minsal-2
   labels:
